@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Button, Image, Typography} from 'antd';
 import {Link as ScrollLink} from 'react-scroll';
 import bannerImg from '../../assets/images/banner-img.jpg';

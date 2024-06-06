@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Button, Drawer} from 'antd';
 import {FacebookOutlined, InstagramOutlined, MenuOutlined, YoutubeOutlined} from '@ant-design/icons';
+// eslint-disable-next-line no-unused-vars
 import {animateScroll as scroll, Link} from 'react-scroll';
 import styles from './Navbar.module.scss';
 import logo from '../../assets/icligo-logo.png';
@@ -8,7 +9,7 @@ import logo from '../../assets/icligo-logo.png';
 const Navbar = () => {
     const [drawerVisible, setDrawerVisible] = useState(false);
     const [navbarBackground, setNavbarBackground] = useState('rgba(0, 0, 0, 0.5)');
-    const [top, setTop] = useState(24);
+    const [top, setTop] = useState(window.innerWidth <= 768 ? 72 : 24);
 
     const handleScroll = () => {
         if (window.scrollY > 60) {

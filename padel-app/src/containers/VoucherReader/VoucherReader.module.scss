@@ -1,0 +1,151 @@
+.message {
+  .alert {
+    min-height: 32px;
+    margin-bottom: 0.5em;
+    :global {
+      .ant-alert {
+        padding: 4px 8px;
+        background-color: unset;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.root {
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #efefef;
+
+  .headerImg {
+    position: relative;
+  }
+
+  .mainImg {
+    min-height: 185px;
+    & img {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      max-height: 200px;
+      min-height: 185px;
+      height: 100%;
+      width: 100%;
+      clip-path: ellipse(90% 86% at 50% 13%);
+    }
+  }
+
+  .qrCodeImg {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 12px;
+    z-index: 1;
+    width: auto;
+    max-width: 160px;
+    max-height: 160px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    & svg:first-child {
+      border-width: 0 !important;
+    }
+
+    & video {
+      object-fit: cover;
+    }
+  }
+
+  .info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: -38px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.qrCodeModal {
+  z-index: 5000;
+  background-color: #000000;
+  :global {
+    .ant-modal,
+    .ant-modal-content {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      height: 100%;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    .ant-modal-body {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+      background: white;
+    }
+  }
+}
+
+.logo_icon {
+  width: auto;
+  max-height: 38px;
+  transition:
+          width 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  @media only screen and (max-width: 991px) {
+    max-height: 27px;
+  }
+}
+
+.actions, .activateCamara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  :global {
+    .ant-btn {
+      border-radius: 20px;
+      background-color: #fccc05;
+      border-color: #fccc05;
+      color: #424242;
+      text-transform: uppercase;
+      &:hover {
+        background-color: #424242;
+        border-color: #424242;
+        color: #fccc05;
+      }
+    }
+  }
+}
+
+.activateCamara {
+  position: relative;
+  height: 100%;
+  bottom: 160px;
+  z-index: 1;
+  left: 50%;
+  margin-top: 0;
+  transform: translate(-50%, -50%);
+
+  & button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: calc(50% - 25px);
+  }
+}
+
