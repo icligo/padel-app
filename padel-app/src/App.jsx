@@ -11,7 +11,7 @@ function App() {
 
   return (
       <QueryClientProvider client={queryClient}>
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
               <Routes>
                   <Route path="/voucher/:voucherCode" element={<VoucherPage />} />
                   <Route path="/voucher/reader" element={<VoucherReader />} />
