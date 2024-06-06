@@ -1,13 +1,22 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Button, Checkbox, Col, Form, Input, Modal, Row} from 'antd';
+import useMutateClient from "../../services/useMutateClient";
 
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
 
 const LeadsForm = () => {
+    const {createClientMutate} = useMutateClient();
+
     const [isModalVisible, setIsModalVisible] = useState(false);
 
+    const onFinish = async (values) => {
+        console.log('Success: ', values);
+        try {
+            await createClientMutate.mutateAsync(values);
+        } catch (e) {
+            console.log('Error: ', e.response.data);
+
+        }
+    };
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -35,7 +44,7 @@ const LeadsForm = () => {
                                 span: 24,
                             }}
                         >
-                            <Input placeholder="Username"/>
+                            <Input placeholder="Nome"/>
                         </Form.Item>
                     </Col>
                 </Row>
@@ -69,7 +78,7 @@ const LeadsForm = () => {
                 <Row>
                     <Col span={24}>
                         <Form.Item
-                            name="remember"
+                            name="termsAndConditions"
                             valuePropName="checked"
                             labelCol={{span: 24}}
                             wrapperCol={{
