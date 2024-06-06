@@ -1,0 +1,13 @@
+.contactInfo {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1100;
+  margin: 0 -2rem;
+  transition: opacity 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

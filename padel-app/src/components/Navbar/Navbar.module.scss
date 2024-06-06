@@ -1,0 +1,79 @@
+/* Navbar.module.scss */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 0 -2rem;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+
+  & img {
+    height: 40px;
+  }
+}
+
+.logo {
+  img {
+    height: 40px;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+
+  a {
+    color: white;
+
+    .anticon {
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.drawerSocial {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 20px;
+
+  a {
+    color: #000000;
+  }
+
+  .ant-icon {
+    fill: #000000;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu, .social {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}

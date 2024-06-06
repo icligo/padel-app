@@ -1,0 +1,11 @@
+.logo_icon {
+  width: auto;
+  max-height: 38px;
+  transition:
+    width 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  @media only screen and (max-width: 991px) {
+    max-height: 27px;
+  }
+}

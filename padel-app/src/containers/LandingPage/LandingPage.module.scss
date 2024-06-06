@@ -1,0 +1,45 @@
+.root {
+  :global {
+    .ant-btn {
+      border-color: #ffffff;
+      border-radius: 50px;
+      color: #ffffff;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #424242;
+        border-color: #424242;
+      }
+    }
+
+    .ant-input {
+      border-radius: 50px;
+    }
+  }
+}
+
+.contactInfo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+  transition: opacity 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100vw;
+  margin: 0 -2rem;
+}
+
+.bannerImage {
+  object-fit: cover;
+  width: 100%;
+  width: 100vw;
+
+}
