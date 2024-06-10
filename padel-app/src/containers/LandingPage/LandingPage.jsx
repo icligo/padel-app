@@ -56,12 +56,12 @@ const LandingPage = () => {
                     className={`tw-absolute tw-text-white tw-text-start tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-bottom-16 md:tw-bottom-12 tw-px-4 md:tw-px-0`}>
                     <Typography.Title level={1} className="tw-mt-4 md:tw-ml-[2rem] md:tw-col-span-2"
                                       style={{color: "white"}}>
-                        TREINE NO SEU TEMPO.
+                        A tua jornada de padel começa aqui.
                     </Typography.Title>
                     <div
                         className={`tw-flex tw-justify-end md:tw-col-span-2 md:tw-col-end-7 md:tw-mr-[2rem] tw-items-end tw-pb-4`}>
                         <ScrollLink to="schedule" smooth={true} duration={500} offset={-40}>
-                            <Button className="tw-bg-transparent">Faça parte da nossa academia!</Button>
+                            <Button className="tw-bg-transparent">Mais informação</Button>
                         </ScrollLink>
                     </div>
                 </div>
@@ -69,13 +69,16 @@ const LandingPage = () => {
             <div id="about"
                  className={`tw-bg-black tw-text-white tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-text-start tw-py-12 tw-px-[2rem] tw-mt-[-10px] tw-mx-[-2rem]`}>
                 <Typography.Title level={1} className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: "white"}}>
-                    SOMOS UMA ACADEMIA DE ALTA QUALIDADE, DEDICADA À SAÚDE E BEM-ESTAR ACESSÍVEIS.
+                    Astra Padel: Onde a Paixão pelo Padel Brilha Mais Alto!
                 </Typography.Title>
                 <Typography.Text className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: "white"}}>
-                    A Klipsan Fitness é uma academia para você frequentar do seu jeito, e fazer o seu melhor. Ao
-                    associar-se, você terá acesso a uma programação digital e presencial na academia para ajudá-lo a
-                    atingir seus objetivos de condicionamento físico. Veja abaixo todos os serviços oferecidos pela
-                    academia.
+                    A nossa missão é promover a paixão pelo padel e oferecer uma experiência desportiva de alta qualidade para todos os nossos membros. Localizado num ambiente moderno e acolhedor, o nosso clube é o lugar perfeito para jogadores de todos os níveis, desde iniciantes até profissionais, se reunirem, jogarem e melhorarem as suas habilidades.
+
+                    O clube conta com courts de última geração, iluminadas e mantidas em perfeitas condições para garantir o melhor desempenho e conforto durante os jogos. Além disso, oferecemos uma variedade de serviços e comodidades, incluindo aulas com treinadores experientes, torneios regulares, eventos sociais e uma loja com os melhores equipamentos e acessórios de padel.
+
+                    Na Astra Padel, acreditamos que o desporte é mais do que apenas competição; é uma oportunidade de construir amizades, criar memórias e viver momentos inesquecíveis. Aqui, cada partida é uma celebração da tua paixão pelo padel.
+
+                    Vêm nos visitar e faz parte da família Astra Padel!
                 </Typography.Text>
             </div>
             <div id="schedule"
@@ -85,9 +88,7 @@ const LandingPage = () => {
                         Agendar visita
                     </Typography.Title>
                     <Typography.Text>
-                        Faça um teste gratuito de 30 minutos em qualquer um dos nossos estabelecimentos para decidir se
-                        a Klipsan é a academia certa para você. Você poderá experimentar os equipamentos, observar as
-                        aulas e receber respostas diretas para todas as suas perguntas.
+                        Agenda a tua visita e vêm conhecer pessoalmente tudo o que o Astra Padel tem para te oferecer! Preenche o formulário com as tuas informações e nós entraremos em contato para marcar uma visita guiada. Esperamos ver-te em breve nas nossas instalações!
                     </Typography.Text>
                 </div>
                 <div className="tw-mb-4 tw-mt-4 md:tw-col-span-3">

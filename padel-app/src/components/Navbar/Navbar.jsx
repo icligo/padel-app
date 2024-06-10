@@ -47,8 +47,8 @@ const Navbar = () => {
                     <img src={logo} alt="Logo"/>
                 </div>
                 <div className={styles.menu}>
-                    <Link to="about" smooth={true} duration={500} offset={-60}>Sobre</Link>
-                    <Link to="schedule" smooth={true} duration={500}>Agenda</Link>
+                    <Link to="about" smooth={true} duration={500} offset={-55}>Sobre</Link>
+                    <Link to="schedule" smooth={true} duration={500} offset={-60}>Agenda</Link>
                     <Link to="footer" smooth={true} duration={500}>Contactos</Link>
                 </div>
                 <div className={styles.social}>
