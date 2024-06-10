@@ -11,7 +11,7 @@ const LeadsForm = () => {
     const onFinish = async (values) => {
         console.log('Success: ', values);
         try {
-            await createClientMutate.mutateAsync(values);
+            await createClientMutate.mutateAsync({...values, voucherIsValid: true});
         } catch (e) {
             console.log('Error: ', e.response.data);
 

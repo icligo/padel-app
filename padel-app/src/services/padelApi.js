@@ -10,7 +10,7 @@ export const getClients = async (data) => {
 };
 
 export const createClient = async (data) => {
-    const res = await padelApiClient.post(`/`, data);
+    const res = await padelApiClient.post('', data);
 
     return res.data;
 };

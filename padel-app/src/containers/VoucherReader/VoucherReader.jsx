@@ -4,7 +4,7 @@ import {QrScanner} from '@yudiel/react-qr-scanner';
 import styles from "./VoucherReader.module.scss";
 import bannerImg from '../../assets/images/banner-img.jpg';
 import {useRef, useState} from 'react';
-import logo from '../../assets/icligo-logo.png';
+import logo from '../../assets/astra-logo.png';
 
 const VoucherReader = () => {
     const [stopDecoding, setStopDecoding] = useState(true);
@@ -39,10 +39,10 @@ const VoucherReader = () => {
                     {message && <Alert message={message?.message} type={message?.type} showIcon closable/>}
                 </div>
             </div>
-            <div className="tw-flex tw-items-center tw-justify-center tw-mt-6">
+            <div className="tw-flex tw-items-center tw-justify-center">
                 <img src={logo} className={styles.logo_icon} alt="iCliGo logo"/>
             </div>
-            <div className="tw-flex tw-items-center tw-justify-center tw-mt-12">
+            <div className="tw-flex tw-items-center tw-justify-center tw-mt-2">
                 <div className={styles.root}>
                     <div className={styles.headerImg}>
                         <div className={styles.mainImg}>

@@ -1,0 +1,57 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.circlesContainer {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #7e7e7e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tennisBall {
+  width: 80%;
+  height: 80%;
+  background-color: #CCFF00; /* Cor verde da bola de tênis */
+  border-radius: 50%;
+  position: relative;
+}
+
+.tennisBall::before,
+.tennisBall::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.tennisBall::before {
+  width: 15%;
+  height: 70%;
+  left: 10%;
+  top: 15%;
+}
+
+.tennisBall::after {
+  width: 70%;
+  height: 15%;
+  top: 15%;
+  left: 15%;
+}

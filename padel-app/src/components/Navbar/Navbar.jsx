@@ -4,7 +4,7 @@ import {FacebookOutlined, InstagramOutlined, MenuOutlined, YoutubeOutlined} from
 // eslint-disable-next-line no-unused-vars
 import {animateScroll as scroll, Link} from 'react-scroll';
 import styles from './Navbar.module.scss';
-import logo from '../../assets/icligo-logo.png';
+import logo from '../../assets/astra-logo.png';
 
 const Navbar = () => {
     const [drawerVisible, setDrawerVisible] = useState(false);

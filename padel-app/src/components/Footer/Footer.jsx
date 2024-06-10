@@ -1,7 +1,7 @@
 import React from 'react';
 import {FacebookOutlined, InstagramOutlined, YoutubeOutlined} from '@ant-design/icons';
 import styles from './Footer.module.scss';
-import logo from '../../assets/icligo-logo.png';
+import logo from '../../assets/astra-logo.png';
 
 const Footer = () => {
     return (
@@ -21,7 +21,6 @@ const Footer = () => {
                 </div>
                 <div className={styles.company}>
                     <img src={logo} alt="Logo" className={styles.logo}/>
-                    <p className={styles.description}>AstraPadel - Bringing the best padel experience to you.</p>
                     <div className={styles.social}>
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                             <InstagramOutlined/>
