@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const padelApiClient = axios.create({
-    baseURL: "https://padel-api-x3i0.onrender.com/api/v1/clients"
+    baseURL: "https://api.astrapadel.pt/api/v1/clients"
 });
 
 export const getClients = async (data) => {
