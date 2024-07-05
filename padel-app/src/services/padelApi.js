@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const padelApiClient = axios.create({
-    baseURL: "https://padel-api-x3i0.onrender.com/api/v1/clients"
+    baseURL: "https://api.astrapadel.pt/api/v1"
 });
 
 export const getClients = async (data) => {
-    const res = await padelApiClient.get(`/?name=${data?.name}&email=${data?.email}&phone=${data?.phone}`);
+    const res = await padelApiClient.get(`/clients/?name=${data?.name}&email=${data?.email}&phone=${data?.phone}`);
     return res.data;
 };
 
 export const createClient = async (data) => {
-    const res = await padelApiClient.post('', data);
+    const res = await padelApiClient.post('/clients', data);
 
     return res.data;
 };
