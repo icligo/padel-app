@@ -7,6 +7,7 @@ import VoucherReader from "./containers/VoucherReader/VoucherReader";
 import {useEffect} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ClientsPage from "./containers/ClientsPage/ClientsPage";
+import {SpeedInsights} from "@vercel/speed-insights/dist/next/index.mjs";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ function App() {
   return (
       <QueryClientProvider client={queryClient}>
           <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
+              <SpeedInsights />
               <RouteChangeTracker />
               <Routes>
                   <Route path="/voucher/:voucherCode" element={<VoucherPage />} />
