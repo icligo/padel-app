@@ -7,14 +7,15 @@ const LeadsForm = () => {
     const {createClientMutate} = useMutateClient();
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState({text: '', type: ''});
 
     const onFinish = async (values) => {
-        console.log('Success: ', values);
         try {
             await createClientMutate.mutateAsync({...values, voucherIsValid: true});
+            setSubmitMessage({text: 'Formulário enviado com sucesso!', type: 'success'});
         } catch (e) {
             console.log('Error: ', e.response.data);
-
+            setSubmitMessage({text: `Erro: ${e.response.data.message}`, type: 'error'});
         }
     };
     const showModal = () => {
@@ -99,9 +100,14 @@ const LeadsForm = () => {
                 </Row>
                 <Form.Item>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Enviar
                     </Button>
                 </Form.Item>
+                {submitMessage.text && (
+                    <p style={{marginTop: 10, color: submitMessage.type === 'error' ? 'red' : null}}>
+                        {submitMessage.text}
+                    </p>
+                )}
             </Form>
             <Modal
                 title="Termos e Condições"
