@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Table, Input, Button, Space, Row, Col} from 'antd';
 import {CheckCircleOutlined, CloseCircleOutlined} from '@ant-design/icons';
 import useClients from "../../services/useClients";
