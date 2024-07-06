@@ -1,0 +1,63 @@
+// ClientsPage.module.scss
+
+:root {
+  --primary-color: #ff5a5f;
+  --primary-color-hover: #e74c3c;
+  --secondary-color: #00a699;
+  --text-color: #484848;
+  --background-color: #f7f7f7;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pageContainer {
+  padding: 24px;
+  background-color: var(--background-color);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filterCol {
+  flex: 1 1 200px;
+}
+
+.input {
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+    color: white !important;
+  }
+}
+
+.table {
+  .ant-table {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+
+    .ant-table-thead > tr > th {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+    }
+
+    .ant-table-tbody > tr > td {
+      text-align: center;
+    }
+  }
+}

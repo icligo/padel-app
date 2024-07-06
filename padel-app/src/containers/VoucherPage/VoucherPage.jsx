@@ -5,6 +5,7 @@ import bannerImg from '../../assets/images/banner-img.jpg';
 import {useState} from "react";
 import logo from '../../assets/astra-logo.png';
 import LoyaltyCard from "../../components/LoyaltyCard/LoyaltyCard";
+import PageSeo from "../../components/SEO/PageSeo";
 
 const VoucherPage = () => {
     const {voucherCode} = useParams();
@@ -18,8 +19,18 @@ const VoucherPage = () => {
         setOpen(false);
     };
 
+    const pageTitle = `Voucher - AstraPadel`;
+    const pageDescription = 'Página com os vouchers para aplicação de descontos e campanhas na AstraPadel'; // Descrição da página
+
     return (
         <>
+            <PageSeo
+                title={pageTitle}
+                description={pageDescription}
+                imageUrl={bannerImg}
+                imageAlt="Imagem do banner do voucher"
+                siteUrl={`https://astrapadel.pt/voucher/${voucherCode}`}
+            />
             <div className="tw-flex tw-items-center tw-justify-center">
                 <img src={logo} className={styles.logo_icon} alt="iCliGo logo"/>
             </div>

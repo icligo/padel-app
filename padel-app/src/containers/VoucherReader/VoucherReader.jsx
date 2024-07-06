@@ -5,6 +5,7 @@ import styles from "./VoucherReader.module.scss";
 import bannerImg from '../../assets/images/banner-img.jpg';
 import {useRef, useState} from 'react';
 import logo from '../../assets/astra-logo.png';
+import PageSeo from "../../components/SEO/PageSeo";
 
 const VoucherReader = () => {
     const [stopDecoding, setStopDecoding] = useState(true);
@@ -31,8 +32,18 @@ const VoucherReader = () => {
         }
     };
 
+    const pageTitle = `Leitor de Vouchers - AstraPadel`;
+    const pageDescription = 'Página com o leitor de vouchers';
+
     return (
         <>
+            <PageSeo
+                title={pageTitle}
+                description={pageDescription}
+                imageUrl={bannerImg}
+                imageAlt="Imagem do banner do voucher"
+                siteUrl={"https://astrapadel.pt/voucher/reader"}
+            />
             <div className={styles.message}>
                 <h5>Última leitura:</h5>
                 <div className={styles.alert}>
