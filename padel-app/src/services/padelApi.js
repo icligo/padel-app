@@ -10,12 +10,7 @@ export const getClients = async (data) => {
 };
 
 export const createClient = async (data) => {
-    let config = {
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        }
-    }
-    const res = await padelApiClient.post('/clients', data, config);
+    const res = await padelApiClient.post('/clients', data);
 
     return res.data;
 };
