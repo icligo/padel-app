@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Button, Checkbox, Col, Form, Input, Modal, Row} from 'antd';
+import {Button, Checkbox, Col, Form, Input, Modal, Row, message} from 'antd';
 import useMutateClient from "../../services/useMutateClient";
 
 
@@ -7,15 +7,14 @@ const LeadsForm = () => {
     const {createClientMutate} = useMutateClient();
 
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [submitMessage, setSubmitMessage] = useState({text: '', type: ''});
 
     const onFinish = async (values) => {
         try {
             await createClientMutate.mutateAsync({...values, voucherIsValid: true});
-            setSubmitMessage({text: 'Formulário enviado com sucesso!', type: 'success'});
+            message.success('Formulário enviado com sucesso!');
         } catch (e) {
             console.log('Error: ', e.response.data);
-            setSubmitMessage({text: `Erro: ${e.response.data.message}`, type: 'error'});
+            message.error(`${e.response.data.message}`);
         }
     };
     const showModal = () => {
@@ -103,11 +102,6 @@ const LeadsForm = () => {
                         Enviar
                     </Button>
                 </Form.Item>
-                {submitMessage.text && (
-                    <p style={{marginTop: 10, color: submitMessage.type === 'error' ? 'red' : null}}>
-                        {submitMessage.text}
-                    </p>
-                )}
             </Form>
             <Modal
                 title="Termos e Condições"
