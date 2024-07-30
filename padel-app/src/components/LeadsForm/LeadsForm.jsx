@@ -18,7 +18,7 @@ const LeadsForm = () => {
             });
         } catch (e) {
             console.log('Error: ', e.response.data);
-            message.error(`${e.response.data.message}`);
+            message.error(`${e.response.data}`);
         }
     };
 
