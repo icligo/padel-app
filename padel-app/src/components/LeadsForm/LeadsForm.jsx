@@ -1,22 +1,27 @@
-import {useState} from 'react';
-import {Button, Checkbox, Col, Form, Input, Modal, Row, message} from 'antd';
+import { useState } from 'react';
+import { Button, Checkbox, Col, Form, Input, Modal, Row, message } from 'antd';
 import useMutateClient from "../../services/useMutateClient";
-
+import ReactPixel from 'react-facebook-pixel';
 
 const LeadsForm = () => {
-    const {createClientMutate} = useMutateClient();
-
+    const { createClientMutate } = useMutateClient();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const onFinish = async (values) => {
         try {
-            await createClientMutate.mutateAsync({...values, voucherIsValid: true});
+            await createClientMutate.mutateAsync({ ...values, voucherIsValid: true });
             message.success('Formulário enviado com sucesso!');
+
+            ReactPixel.track('Lead', {
+                content_name: 'Leads Form Submission',
+                content_category: 'Lead Generation'
+            });
         } catch (e) {
             console.log('Error: ', e.response.data);
             message.error(`${e.response.data.message}`);
         }
     };
+
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -39,12 +44,12 @@ const LeadsForm = () => {
                         <Form.Item
                             name="name"
                             label="Nome"
-                            labelCol={{span: 24}}
+                            labelCol={{ span: 24 }}
                             wrapperCol={{
                                 span: 24,
                             }}
                         >
-                            <Input placeholder="Nome"/>
+                            <Input placeholder="Nome" />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -54,24 +59,24 @@ const LeadsForm = () => {
                         <Form.Item
                             name="email"
                             label="E-mail"
-                            labelCol={{span: 24}}
+                            labelCol={{ span: 24 }}
                             wrapperCol={{
                                 span: 24,
                             }}
                         >
-                            <Input placeholder="E-mail"/>
+                            <Input placeholder="E-mail" />
                         </Form.Item>
                     </Col>
                     <Col xs={24} sm={24} md={12}>
                         <Form.Item
                             name="phone"
                             label="Telemóvel"
-                            labelCol={{span: 24}}
+                            labelCol={{ span: 24 }}
                             wrapperCol={{
                                 span: 24,
                             }}
                         >
-                            <Input placeholder="Telemóvel"/>
+                            <Input placeholder="Telemóvel" />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -80,7 +85,7 @@ const LeadsForm = () => {
                         <Form.Item
                             name="termsAndConditions"
                             valuePropName="checked"
-                            labelCol={{span: 24}}
+                            labelCol={{ span: 24 }}
                             wrapperCol={{
                                 span: 24,
                             }}
@@ -89,7 +94,7 @@ const LeadsForm = () => {
                                 Aceito os{' '}
                                 <span
                                     onClick={showModal}
-                                    style={{color: 'blue', textDecoration: 'underline', cursor: 'pointer'}}
+                                    style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
                                 >
                                     Termos e Condições
                                 </span>

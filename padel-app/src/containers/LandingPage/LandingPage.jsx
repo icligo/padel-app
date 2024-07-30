@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Button, Image, Typography } from 'antd';
-import { Link as ScrollLink } from 'react-scroll';
+import {useEffect, useState} from 'react';
+import {Button, Image, Typography} from 'antd';
+import {Link as ScrollLink} from 'react-scroll';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import LeadsForm from '../../components/LeadsForm/LeadsForm';
@@ -8,7 +8,8 @@ import styles from './LandingPage.module.scss';
 import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import PageSeo from '../../components/SEO/PageSeo';
-import bannerImg from '../../assets/images/banner-img.jpg';
+import bannerImg from '../../assets/images/banner-img-1.jpeg';
+import Info from "../../components/Info/Info";
 
 const LandingPage = () => {
     const [contactInfoVisible, setContactInfoVisible] = useState(true);
@@ -57,10 +58,11 @@ const LandingPage = () => {
             />
             <div className={styles.root}>
                 <div className={`${styles.contactInfo} ${!contactInfoVisible ? styles.hidden : ''}`}>
-                    <ContactInfo />
+                    <ContactInfo/>
                 </div>
-                <Navbar />
+                <Navbar/>
                 <div className={`tw-relative ${styles.banner}`}>
+                    <div className={styles.imageBackground} />
                     <Image
                         className={`${styles.bannerImage}`}
                         height={'80vh'}
@@ -69,12 +71,14 @@ const LandingPage = () => {
                         src={bannerImg}
                     />
                     <div
-                        className={`tw-absolute tw-text-white tw-text-start tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-bottom-16 md:tw-bottom-12 tw-px-4 md:tw-px-0`}
+                        className={`tw-z-[2] tw-absolute tw-w-full tw-text-white tw-text-start tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-bottom-16 md:tw-bottom-12 tw-px-4 md:tw-px-0`}
                     >
-                        <Typography.Title level={1} className="tw-mt-4 md:tw-ml-[2rem] md:tw-col-span-2" style={{ color: 'white' }}>
-                            A tua jornada de padel começa aqui.
+                        <Typography.Title className="tw-mt-4 md:tw-ml-[2rem] md:tw-col-span-8"
+                                          style={{color: 'white', fontSize: '35px'}}>
+                            The Court is Yours
                         </Typography.Title>
-                        <div className={`tw-flex tw-justify-end md:tw-col-span-2 md:tw-col-end-7 md:tw-mr-[2rem] tw-items-end tw-pb-4`}>
+                        <div
+                            className={`md:tw-col-span-8 md:tw-col-end-7 md:tw-ml-[2rem] tw-items-end tw-pb-4`}>
                             <ScrollLink to="schedule" smooth={true} duration={500} offset={-40}>
                                 <Button className="tw-bg-transparent">Mais informação</Button>
                             </ScrollLink>
@@ -83,20 +87,20 @@ const LandingPage = () => {
                 </div>
                 <div
                     id="about"
-                    className={`tw-bg-black tw-text-white tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-text-start tw-py-12 tw-px-[2rem] tw-mt-[-10px] tw-mx-[-2rem]`}
+                    className={`tw-bg-white tw-text-white tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-text-start tw-py-12 tw-px-[2rem] tw-mt-[-10px] tw-mx-[-2rem]`}
                 >
-                    <Typography.Title level={1} className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{ color: 'white' }}>
-                        Astra Padel: Onde a Paixão pelo Padel Brilha Mais Alto!
+                    <Typography.Title level={1} className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: 'black'}}>
+                        Uma nova experiência de Padel
                     </Typography.Title>
-                    <Typography.Text className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{ color: 'white' }}>
-                        A nossa missão é promover a paixão pelo padel e oferecer uma experiência desportiva de alta qualidade para todos os nossos membros. Localizado num ambiente moderno e acolhedor, o nosso clube é o lugar perfeito para jogadores de todos os níveis, desde iniciantes até profissionais, se reunirem, jogarem e melhorarem as suas habilidades.
-
-                        O clube conta com courts de última geração, iluminadas e mantidas em perfeitas condições para garantir o melhor desempenho e conforto durante os jogos. Além disso, oferecemos uma variedade de serviços e comodidades, incluindo aulas com treinadores experientes, torneios regulares, eventos sociais e uma loja com os melhores equipamentos e acessórios de padel.
-
-                        Na Astra Padel, acreditamos que o desporte é mais do que apenas competição; é uma oportunidade de construir amizades, criar memórias e viver momentos inesquecíveis. Aqui, cada partida é uma celebração da tua paixão pelo padel.
-
-                        Vêm nos visitar e faz parte da família Astra Padel!
+                    <Typography.Text className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: 'black'}}>
+                        O Astra Padel é muito mais do que apenas um clube de padel. A nossa missão é promover a paixão
+                        pelo padel e oferecer uma experiência desportiva completa de alta qualidade para todos os nossos
+                        membros. O conceito do Astra Padel passa pelo reforço da ligação entre o desporto e os momentos
+                        de lazer.
                     </Typography.Text>
+                </div>
+                <div className="tw-mx-[-2rem]">
+                    <Info/>
                 </div>
                 <div
                     id="schedule"
@@ -104,18 +108,21 @@ const LandingPage = () => {
                 >
                     <div className="tw-mb-4 tw-mt-4 md:tw-col-span-3">
                         <Typography.Title level={1} className="tw-mt-0">
-                            Agendar visita
+                            Torne-se membro fundador e ganha vantagens!
                         </Typography.Title>
                         <Typography.Text>
-                            Agenda a tua visita e vêm conhecer pessoalmente tudo o que o Astra Padel tem para te oferecer! Preenche o formulário com as tuas informações e nós entraremos em contato para marcar uma visita guiada. Esperamos ver-te em breve nas nossas instalações!
+                            Juntar-se ao nosso clube é totalmente gratuito. O que oferecemos? À medida que joga no Astra
+                            Padel ganhará jogos totalmente gratuitos. Para além disso, receberá todas as novidades do
+                            nosso clube, será o primeiro a saber dos nossos torneios, eventos sociais e receberá todas
+                            as outras vantagens que temos para oferecer.
                         </Typography.Text>
                     </div>
-                    <div className="tw-mb-4 tw-mt-4 md:tw-col-span-3">
-                        <LeadsForm />
+                    <div id="form" className="tw-mb-4 tw-mt-4 md:tw-col-span-3">
+                        <LeadsForm/>
                     </div>
                 </div>
-                <ImageGallery images={images} />
-                <Footer />
+                <ImageGallery images={images}/>
+                <Footer/>
             </div>
         </>
     );

@@ -1,14 +1,30 @@
-import {useState} from 'react';
-import {Table, Input, Button, Space, Row, Col} from 'antd';
-import {CheckCircleOutlined, CloseCircleOutlined} from '@ant-design/icons';
+import { useState, useEffect } from 'react';
+import { Table, Input, Button, Space, Row, Col } from 'antd';
+import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import useClients from "../../services/useClients";
 import styles from './ClientsPage.module.scss';
 import bannerImg from "../../assets/images/banner-img.jpg";
 import PageSeo from "../../components/SEO/PageSeo";
+import PasswordModal from '../../components/PasswordModal/PasswordModal';
+import Cookies from 'js-cookie';
 
 const ClientsPage = () => {
-    const [filters, setFilters] = useState({name: '', email: '', phone: ''});
-    const {data, isLoading, error, refetch} = useClients(filters);
+    const [filters, setFilters] = useState({ name: '', email: '', phone: '' });
+    const [isPasswordModalVisible, setIsPasswordModalVisible] = useState(false);
+    const [isCookieValid, setIsCookieValid] = useState(false);
+
+    useEffect(() => {
+        const accessToken = Cookies.get('access_token');
+        if (!accessToken || accessToken !== 'your_password') {
+            setIsPasswordModalVisible(true);
+        } else {
+            setIsCookieValid(true);
+        }
+    }, []);
+
+    const { data, isLoading, error, refetch } = useClients(filters, {
+        enabled: isCookieValid
+    });
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error loading clients</p>;
@@ -18,8 +34,8 @@ const ClientsPage = () => {
     };
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFilters((prevFilters) => ({...prevFilters, [name]: value}));
+        const { name, value } = e.target;
+        setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
     };
 
     const handleNavigate = () => {
@@ -47,8 +63,8 @@ const ClientsPage = () => {
             dataIndex: 'firstGame',
             key: 'firstGame',
             render: firstGame => (
-                firstGame ? <CheckCircleOutlined style={{color: 'green'}}/> :
-                    <CloseCircleOutlined style={{color: 'red'}}/>
+                firstGame ? <CheckCircleOutlined style={{ color: 'green' }} /> :
+                    <CloseCircleOutlined style={{ color: 'red' }} />
             ),
         },
         {
@@ -58,8 +74,8 @@ const ClientsPage = () => {
             render: (text, record) => (
                 <Space>
                     {text}
-                    {record.voucherIsValid ? <CheckCircleOutlined style={{color: 'green'}}/> :
-                        <CloseCircleOutlined style={{color: 'red'}}/>}
+                    {record.voucherIsValid ? <CheckCircleOutlined style={{ color: 'green' }} /> :
+                        <CloseCircleOutlined style={{ color: 'red' }} />}
                 </Space>
             ),
         },
@@ -68,57 +84,67 @@ const ClientsPage = () => {
     const pageTitle = `Lista de Clientes - AstraPadel`;
     const pageDescription = 'Página com o lista de clientes';
 
+    const handlePasswordSubmit = () => {
+        setIsPasswordModalVisible(false);
+        setIsCookieValid(true);
+    };
+
     return (
         <>
-            <PageSeo
-                title={pageTitle}
-                description={pageDescription}
-                imageUrl={bannerImg}
-                imageAlt="Imagem do banner do voucher"
-                siteUrl={`https://astrapadel.pt/clients`}
-            />
-            <div className={styles.pageContainer}>
-                <Row gutter={16} className={styles.filterRow}>
-                    <Col className={styles.filterCol}>
-                        <Input
-                            placeholder="Nome"
-                            name="name"
-                            value={filters.name}
-                            onChange={handleChange}
-                            className={styles.input}
-                            allowClear
-                        />
-                    </Col>
-                    <Col className={styles.filterCol}>
-                        <Input
-                            placeholder="Email"
-                            name="email"
-                            value={filters.email}
-                            onChange={handleChange}
-                            className={styles.input}
-                            allowClear
-                        />
-                    </Col>
-                    <Col className={styles.filterCol}>
-                        <Input
-                            placeholder="Contacto"
-                            name="phone"
-                            value={filters.phone}
-                            onChange={handleChange}
-                            className={styles.input}
-                            allowClear
-                        />
-                    </Col>
-                    <Col className={styles.filterCol}>
-                        <Button block className={styles.button} onClick={handleSearch}>Pesquisar</Button>
-                    </Col>
-                    <Col className={styles.filterCol}>
-                        <Button block className={styles.button} onClick={handleNavigate}>Ir para Voucher Reader</Button>
-                    </Col>
-                </Row>
-                <Table className={styles.table} dataSource={data?.content} columns={columns} rowKey="id"
-                       loading={isLoading}/>
-            </div>
+            <PasswordModal visible={isPasswordModalVisible} onPasswordSubmit={handlePasswordSubmit} />
+            {!isPasswordModalVisible && (
+                <>
+                    <PageSeo
+                        title={pageTitle}
+                        description={pageDescription}
+                        imageUrl={bannerImg}
+                        imageAlt="Imagem do banner do voucher"
+                        siteUrl={`https://astrapadel.pt/clients`}
+                    />
+                    <div className={styles.pageContainer}>
+                        <Row gutter={16} className={styles.filterRow}>
+                            <Col className={styles.filterCol}>
+                                <Input
+                                    placeholder="Nome"
+                                    name="name"
+                                    value={filters.name}
+                                    onChange={handleChange}
+                                    className={styles.input}
+                                    allowClear
+                                />
+                            </Col>
+                            <Col className={styles.filterCol}>
+                                <Input
+                                    placeholder="Email"
+                                    name="email"
+                                    value={filters.email}
+                                    onChange={handleChange}
+                                    className={styles.input}
+                                    allowClear
+                                />
+                            </Col>
+                            <Col className={styles.filterCol}>
+                                <Input
+                                    placeholder="Contacto"
+                                    name="phone"
+                                    value={filters.phone}
+                                    onChange={handleChange}
+                                    className={styles.input}
+                                    allowClear
+                                />
+                            </Col>
+                            <Col className={styles.filterCol}>
+                                <Button block className={styles.button} onClick={handleSearch}>Pesquisar</Button>
+                            </Col>
+                            <Col className={styles.filterCol}>
+                                <Button block className={styles.button} onClick={handleNavigate}>Ir para Voucher Reader</Button>
+                            </Col>
+                        </Row>
+                        <Table className={styles.table} dataSource={data?.content} columns={columns} rowKey="id"
+                               loading={isLoading} />
+                    </div>
+                </>
+            )}
         </>
     );
 };

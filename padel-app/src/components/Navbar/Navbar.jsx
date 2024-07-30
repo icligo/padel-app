@@ -8,15 +8,15 @@ import logo from '../../assets/astra-logo.png';
 
 const Navbar = () => {
     const [drawerVisible, setDrawerVisible] = useState(false);
-    const [navbarBackground, setNavbarBackground] = useState('rgba(0, 0, 0, 0.5)');
+    const [navbarBackground, setNavbarBackground] = useState('white');
     const [top, setTop] = useState(window.innerWidth <= 768 ? 72 : 24);
 
     const handleScroll = () => {
         if (window.scrollY > 60) {
-            setNavbarBackground('black');
+            setNavbarBackground('#f5f5f5');
             setTop(0);
         } else {
-            setNavbarBackground('rgba(0, 0, 0, 0.5)');
+            setNavbarBackground('#f5f5f5');
             if (window.innerWidth <= 768) {
                 setTop(72);
             } else {
@@ -58,7 +58,7 @@ const Navbar = () => {
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FacebookOutlined/></a>
                 </div>
                 <div className={styles.mobile}>
-                    <Button type="text" icon={<MenuOutlined/>} onClick={showDrawer}/>
+                    <Button type="black" style={{color: "black", borderColor: "black"}} icon={<MenuOutlined/>} onClick={showDrawer}/>
                 </div>
                 <Drawer
                     className="tw-z-[5000]"

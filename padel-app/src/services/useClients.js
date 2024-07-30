@@ -1,10 +1,11 @@
 import { useQuery } from 'react-query';
-import {getClients} from "./padelApi";
+import { getClients } from "./padelApi";
 
-const useClients = ({ name = '', email = '', phone = '' } = {}) => {
+const useClients = ({ name = '', email = '', phone = '' } = {}, options = {}) => {
     return useQuery(['clients', { name, email, phone }], () => getClients({ name, email, phone }), {
         refetchOnWindowFocus: false,
-        keepPreviousData: true
+        keepPreviousData: true,
+        ...options
     });
 };
 

@@ -18,6 +18,19 @@
   }
 }
 
+.imageBackground {
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: .9;
+  background-color: transparent;
+  transition: background .3s, border-radius .3s, opacity .3s;
+  position: absolute;
+  background-image: linear-gradient(90deg, #151112 28%, #15111200 100%);
+}
+
 .contactInfo {
   position: fixed;
   top: 0;
@@ -38,6 +51,13 @@
 }
 
 .bannerImage {
+  object-fit: cover;
+  width: 100%;
+  width: 100vw;
+
+}
+
+.bannerImage2 {
   object-fit: cover;
   width: 100%;
   width: 100vw;
