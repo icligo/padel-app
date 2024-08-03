@@ -47,7 +47,7 @@ const VoucherPage = () => {
                         </div>
                     </div>
                     <div className={styles.info}>
-                        <LoyaltyCard />
+                        <LoyaltyCard voucher={voucherCode}/>
                     </div>
                 </div>
                 <Modal

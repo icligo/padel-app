@@ -13,8 +13,21 @@ export const getClients = async (params) => {
     return res.data;
 };
 
+export const getClientByVoucher = async (params) => {
+    const { voucher } = params;
+    const res = await padelApiClient.get(`/${voucher}`);
+    return res.data;
+};
+
 export const createClient = async (data) => {
     const res = await padelApiClient.post('/clients', data);
+
+    return res.data;
+};
+
+export const readVoucher = async (params) => {
+    const { voucherToken } = params;
+    const res = await padelApiClient.post(`/${voucherToken}`);
 
     return res.data;
 };

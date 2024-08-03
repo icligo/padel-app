@@ -8,6 +8,7 @@ import logo from '../../assets/astra-logo.png';
 import PageSeo from "../../components/SEO/PageSeo";
 import PasswordModal from '../../components/PasswordModal/PasswordModal';
 import Cookies from 'js-cookie';
+import useMutateVoucher from "../../services/useMutateVoucher.js";
 
 const VoucherReader = () => {
     const [stopDecoding, setStopDecoding] = useState(true);
@@ -15,6 +16,7 @@ const VoucherReader = () => {
     const [message, setMessage] = useState(null);
     const [isPasswordModalVisible, setIsPasswordModalVisible] = useState(false);
     const ref = useRef();
+    const { readVoucherMutate } = useMutateVoucher();
 
     useEffect(() => {
         const accessToken = Cookies.get('access_token');
@@ -32,6 +34,12 @@ const VoucherReader = () => {
 
         try {
             if (isValidTicket) {
+                let obj = {};
+                result.split('&').forEach(function(part) {
+                    let item = part.split('=');
+                    obj[item[0]] = item[1];
+                });
+                await readVoucherMutate.mutateAsync({ voucherToken: obj.voucher });
                 setMessage({type: 'success', message: `Voucher validado!`});
             } else {
                 setMessage({type: 'error', message: 'Código inválido!'});
