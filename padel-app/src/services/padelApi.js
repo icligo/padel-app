@@ -15,7 +15,7 @@ export const getClients = async (params) => {
 
 export const getClientByVoucher = async (params) => {
     const { voucher } = params;
-    const res = await padelApiClient.get(`/${voucher}`);
+    const res = await padelApiClient.get(`/clients/${voucher}`);
     return res.data;
 };
 
