@@ -8,12 +8,12 @@ const Footer = () => {
             <div className={styles.container}>
                 <div className={styles.column}>
                     <h3 style={{color: "black"}}>Contactos:</h3>
-                    <p>Email: contato@astrapadel.com</p>
-                    <p>Telefone: +351 123 456 789</p>
+                    <p>Email: astrapadel.suporte@gmail.com</p>
+                    <p>Telefone: +351 914 445 464</p>
                 </div>
                 <div className={styles.column}>
                     <h3 style={{color: "black"}}>Localização:</h3>
-                    <p>R. Várzea de Cima Nº149, 4620-513 Lousada</p>
+                    <p>Rua do Monte de Além nº11, Sobrosa</p>
                     <h3>Horário de Funcionamento</h3>
                     <p>De segunda-feira a sexta-feira das 9h até as 24h
                         Sábado, Domingo e Feriados das 8:30h as 20h</p>

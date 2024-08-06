@@ -9,7 +9,9 @@ import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import PageSeo from '../../components/SEO/PageSeo';
 import bannerImg from '../../assets/images/banner-img-1.jpeg';
+import padelPlayer from '../../assets/images/padel-player.svg';
 import Info from "../../components/Info/Info";
+import Features from "../../components/Features/Features.jsx";
 
 const LandingPage = () => {
     const [contactInfoVisible, setContactInfoVisible] = useState(true);
@@ -62,7 +64,7 @@ const LandingPage = () => {
                 </div>
                 <Navbar/>
                 <div className={`tw-relative ${styles.banner}`}>
-                    <div className={styles.imageBackground} />
+                    <div className={styles.imageBackground}/>
                     <Image
                         className={`${styles.bannerImage}`}
                         height={'80vh'}
@@ -87,19 +89,30 @@ const LandingPage = () => {
                 </div>
                 <div
                     id="about"
-                    className={`tw-bg-white tw-text-white tw-grid tw-grid-cols-1 md:tw-grid-cols-6 tw-gap-6 tw-text-start tw-py-12 tw-px-[2rem] tw-mt-[-10px] tw-mx-[-2rem]`}
+                    className={`tw-bg-white tw-text-white tw-grid tw-grid-cols-1 tw-gap-0 md:tw-grid-cols-6 md:tw-gap-6 tw-text-start tw-pt-12 tw-px-[2rem] tw-mx-[-2rem]`}
                 >
-                    <Typography.Title level={1} className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: 'black'}}>
-                        Uma nova experiência de Padel
-                    </Typography.Title>
-                    <Typography.Text className="tw-mb-4 tw-mt-4 md:tw-col-span-3" style={{color: 'black'}}>
-                        O Astra Padel é muito mais do que apenas um clube de padel. A nossa missão é promover a paixão
-                        pelo padel e oferecer uma experiência desportiva completa de alta qualidade para todos os nossos
-                        membros. O conceito do Astra Padel passa pelo reforço da ligação entre o desporto e os momentos
-                        de lazer.
-                    </Typography.Text>
+                    <div className="md:tw-col-span-3">
+                        <Typography.Title level={1} className="tw-mb-4 tw-mt-4" style={{color: 'black'}}>
+                            Uma nova experiência de Padel
+                        </Typography.Title>
+                        <Typography.Text className="tw-mb-4 tw-mt-4" style={{color: 'black'}}>
+                            O Astra Padel é muito mais do que apenas um clube de padel. A nossa missão é promover a paixão
+                            pelo padel e oferecer uma experiência desportiva completa de alta qualidade para todos os nossos
+                            membros. O conceito do Astra Padel passa pelo reforço da ligação entre o desporto e os momentos
+                            de lazer.
+                        </Typography.Text>
+                    </div>
+                    <div className="tw-mt-[-2rem] md:tw-col-span-3 md: tw-mt-0">
+                        <Image
+                            className={`${styles.padelPlayerImg}`}
+                            height={'450px'}
+                            width={'100%'}
+                            preview={false}
+                            src={padelPlayer}
+                        />
+                    </div>
                 </div>
-                <div className="tw-mx-[-2rem]">
+                <div className="tw-mt-[-4rem] tw-mx-[-2rem] md:tw-mt-0">
                     <Info/>
                 </div>
                 <div

@@ -103,7 +103,7 @@ const LeadsForm = () => {
                     </Col>
                 </Row>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" loading={createClientMutate.isLoading}>
                         Enviar
                     </Button>
                 </Form.Item>

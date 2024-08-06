@@ -1,0 +1,41 @@
+.root {
+  background-color: #f7f8fc;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 80px 20px;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features > div:nth-child(2n)::after {
+    display: none;
+  }
+
+  .features > div:not(:nth-child(2n)):not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features > div:nth-child(3n)::after {
+    display: none;
+  }
+
+  .features > div:not(:nth-child(3n)):not(:last-child)::after {
+    display: none;
+  }
+}
