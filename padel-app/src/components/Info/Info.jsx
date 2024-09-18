@@ -30,7 +30,7 @@ const Info = () => {
                         preview={false}
                         src={barIcon}
                     />
-                    <Typography.Title level={2} style={{color: 'white'}}>Bar</Typography.Title>
+                    <Typography.Title level={2} style={{color: 'white'}}>Snack-Bar</Typography.Title>
                     <Typography.Text style={{color: 'white'}}>Um dos nossos principais objetivos é reforçar a ligação entre o Padel e os momentos
                         de lazer. O nosso clube tem ao dispor dos seus clientes um espaço totalmente pensado em momentos
                         de convívio com todas as comodidades para que passe grandes momentos com seus amigos. O nosso

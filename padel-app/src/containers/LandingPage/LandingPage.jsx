@@ -11,7 +11,6 @@ import PageSeo from '../../components/SEO/PageSeo';
 import bannerImg from '../../assets/images/banner-img-1.jpeg';
 import padelPlayer from '../../assets/images/padel-player.svg';
 import Info from "../../components/Info/Info";
-import Features from "../../components/Features/Features.jsx";
 
 const LandingPage = () => {
     const [contactInfoVisible, setContactInfoVisible] = useState(true);
@@ -121,7 +120,7 @@ const LandingPage = () => {
                 >
                     <div className="tw-mb-4 tw-mt-4 md:tw-col-span-3">
                         <Typography.Title level={1} className="tw-mt-0">
-                            Torne-se membro fundador e ganha vantagens!
+                            Torna-te membro fundador e ganha vantagens!
                         </Typography.Title>
                         <Typography.Text>
                             Juntar-se ao nosso clube é totalmente gratuito. O que oferecemos? À medida que joga no Astra

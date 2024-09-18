@@ -115,13 +115,38 @@ const LeadsForm = () => {
                 footer={null}
             >
                 <p>
-                    Aqui você pode adicionar o texto dos Termos e Condições. Este é um exemplo de como os termos podem
-                    ser exibidos. Você pode incluir parágrafos, listas, links, e qualquer outro tipo de conteúdo que
-                    seja necessário para os termos e condições do seu serviço.
+                Ao subscrever a newsletter do AstraPadel, você concorda com os seguintes termos e condições:
                 </p>
                 <p>
-                    É importante que os termos sejam claros e compreensíveis para todos os usuários, detalhando todas as
-                    condições de uso, políticas de privacidade, responsabilidades e direitos dos usuários e da empresa.
+                <h4>Dados Pessoais</h4>
+                Ao inscrever-se, você fornece voluntariamente suas informações pessoais (nome, endereço de e-mail e outros dados relevantes). Essas informações serão usadas exclusivamente para o envio de comunicações relacionadas ao AstraPadel, como notícias, atualizações, promoções e descontos.
+                </p>
+                <p>
+                <h4>Descontos Exclusivos</h4>
+                <p>
+                Como assinante da nossa newsletter, você terá acesso a ofertas e descontos exclusivos. Esses descontos podem estar sujeitos a termos específicos e serão válidos por períodos limitados, conforme descrito nas respectivas comunicações.
+                </p>
+                <h4>Envio de Conteúdos</h4>
+                <p>
+                A newsletter do AstraPadel será enviada periodicamente e poderá conter informações sobre eventos, competições, novidades sobre o clube, promoções, descontos especiais e outros conteúdos relevantes.
+                </p>
+                <h4>Cancelamento da Subscrição</h4>
+                <p>
+                Você pode cancelar a sua subscrição a qualquer momento, clicando no link de cancelamento incluído no rodapé de cada e-mail. Após o cancelamento, você deixará de receber futuras comunicações, mas seus dados poderão ser retidos por um período para fins administrativos.
+                </p>
+                <h4>Proteção de Dados</h4>
+                <p>
+                Garantimos que os seus dados pessoais serão tratados com total confidencialidade e segurança, em conformidade com as leis de proteção de dados aplicáveis. Não partilhamos as suas informações com terceiros sem o seu consentimento explícito.
+                </p>
+                <h4>Alterações aos Termos e Condições</h4>
+                <p>
+                O AstraPadel reserva-se o direito de modificar estes termos a qualquer momento. Quaisquer alterações serão comunicadas através da nossa newsletter ou por outros meios apropriados.
+                </p>
+
+                <h4>Aceitação dos Termos</h4>
+                <p>
+                Ao subscrever a newsletter do AstraPadel, você declara ter lido e concordado com estes Termos e Condições.
+                </p>
                 </p>
             </Modal>
         </>

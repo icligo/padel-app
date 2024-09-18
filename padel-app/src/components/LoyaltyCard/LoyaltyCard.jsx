@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, Modal } from 'antd';
 import styles from './LoyaltyCard.module.scss';
 import useClient from "../../services/useClient.js";
+import { ReloadOutlined } from '@ant-design/icons';
 
 // eslint-disable-next-line react/prop-types
 const LoyaltyCard = ({ voucher }) => {
@@ -10,8 +11,9 @@ const LoyaltyCard = ({ voucher }) => {
 
     const {data} = useClient(voucher);
 
-    console.log('test voucher: ', voucher);
-    console.log('test data loyalty: ', data);
+const handleRefresh = () => {
+    location.reload();
+    }
 
     const handlePlayGame = () => {
         if (gamesPlayed < 10) {
@@ -35,8 +37,9 @@ const LoyaltyCard = ({ voucher }) => {
                     </div>
                 ))}
             </div>
-            <Button type="primary" onClick={handlePlayGame}>
-                Jogar Jogo
+            <Button type="primary" onClick={handleRefresh}>
+                Refresh
+                <ReloadOutlined />
             </Button>
             <Modal
                 title="Parabéns!"
