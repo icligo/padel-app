@@ -27,7 +27,7 @@ export const createClient = async (data) => {
 
 export const readVoucher = async (params) => {
     const { voucherToken } = params;
-    const res = await padelApiClient.post(`/clients/${voucherToken}/add-game`, {
+    const res = await padelApiClient.post(`/clients/${voucherToken}`, {
         headers: {
             'auth-token': import.meta.env.NEXT_PUBLIC_PADEL_API_TOKEN
         }
