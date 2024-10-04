@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Modal } from 'antd';
+import { Button, Modal, Spin } from 'antd';
 import styles from './LoyaltyCard.module.scss';
 import useClient from "../../services/useClient.js";
 import { ReloadOutlined } from '@ant-design/icons';
@@ -7,26 +7,18 @@ import { ReloadOutlined } from '@ant-design/icons';
 // eslint-disable-next-line react/prop-types
 const LoyaltyCard = ({ voucher }) => {
     const {data, isLoading} = useClient(voucher);
+
+    if (isLoading) {
+        return <Spin />;
+    }
     console.log('test data: ', data)
 
-    if (isLoading) return <p>Loading...</p>;
-
-    const [gamesPlayed, setGamesPlayed] = useState(data?.games);
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = useState(data?.freeGame);
 
 
 const handleRefresh = () => {
     location.reload();
     }
-
-    const handlePlayGame = () => {
-        if (gamesPlayed < 10) {
-            setGamesPlayed(gamesPlayed + 1);
-        }
-        if (gamesPlayed + 1 === 10) {
-            setModalVisible(true);
-        }
-    };
 
     const closeModal = () => {
         setModalVisible(false);
@@ -37,7 +29,7 @@ const handleRefresh = () => {
             <div className={styles.circlesContainer}>
                 {[...Array(10)].map((_, index) => (
                     <div key={index} className={styles.circle}>
-                        {index < gamesPlayed && <div className={styles.tennisBall} />}
+                        {index < data?.games && <div className={styles.tennisBall} />}
                     </div>
                 ))}
             </div>
