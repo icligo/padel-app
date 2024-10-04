@@ -15,19 +15,16 @@ const Footer = () => {
                     <h3 style={{color: "black"}}>Localização:</h3>
                     <p>Rua do Monte de Além nº11, Sobrosa</p>
                     <h3>Horário de Funcionamento</h3>
-                    <p>De segunda-feira a sexta-feira das 9h até as 24h
-                        Sábado, Domingo e Feriados das 8:30h as 20h</p>
+                    <p>De segunda-feira a sexta-feira das 7h30 às 2h
+                        Sábado, Domingo e Feriados das 7:30h às 2h</p>
                 </div>
                 <div className={styles.company}>
-                    <img src={logo} alt="Logo" className={styles.logo}/>
+                    <img src={logo} alt="Logo inst" className={styles.logo}/>
                     <div className={styles.social}>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/astrapadel_clube/?fbclid=IwZXh0bgNhZW0CMTEAAR0-xy5aomADuMqJuUuq31fTC60jrXUv_WthxBnZt8P6fhZX2dnh6NGNN2Q_aem_5rYO25y8fPP18XE6fEJ3pQ" target="_blank" rel="noopener noreferrer">
                             <InstagramOutlined/>
                         </a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                            <YoutubeOutlined/>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/people/Astra-Padel/61562037321528/" target="_blank" rel="noopener noreferrer">
                             <FacebookOutlined/>
                         </a>
                     </div>
