@@ -19,7 +19,7 @@ const Footer = () => {
                         Sábado, Domingo e Feriados das 7:30h às 2h</p>
                 </div>
                 <div className={styles.company}>
-                    <img src={logo} alt="Logo inst" className={styles.logo}/>
+                    <img src={logo} alt="Logo" className={styles.logo}/>
                     <div className={styles.social}>
                         <a href="https://www.instagram.com/astrapadel_clube/?fbclid=IwZXh0bgNhZW0CMTEAAR0-xy5aomADuMqJuUuq31fTC60jrXUv_WthxBnZt8P6fhZX2dnh6NGNN2Q_aem_5rYO25y8fPP18XE6fEJ3pQ" target="_blank" rel="noopener noreferrer">
                             <InstagramOutlined/>
