@@ -40,6 +40,7 @@ const VoucherReader = () => {
                     obj[item[0]] = item[1];
                 });
                 await readVoucherMutate.mutateAsync({ voucherToken: obj.voucher });
+                console.log('readVoucherMutate: ', readVoucherMutate.message, readVoucherMutate)
                 setMessage({type: 'success', message: `Voucher validado!`});
             } else {
                 setMessage({type: 'error', message: 'Código inválido!'});
@@ -110,7 +111,7 @@ const VoucherReader = () => {
                                     <b>Voucher title</b>
                                 </h4>
                                 <span style={{ color: '#545454' }}
-                                      className={'tw-mb-4 tw-text-xs tw-text-gray-500'}>voucher rules....</span>
+                                      className={'tw-mb-4 tw-text-xs tw-text-gray-500'}></span>
                             </div>
                         </div>
                     </div>
