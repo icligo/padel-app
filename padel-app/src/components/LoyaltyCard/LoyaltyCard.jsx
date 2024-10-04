@@ -8,8 +8,6 @@ import { ReloadOutlined } from '@ant-design/icons';
 const LoyaltyCard = ({ voucher }) => {
     const {data, isLoading} = useClient(voucher);
 
-    console.log('test data: ', data)
-
     const [modalVisible, setModalVisible] = useState(data?.freeGame);
 
 
@@ -40,10 +38,8 @@ const handleRefresh = () => {
             <Modal
                 title="Parabéns!"
                 visible={data?.freeGame}
-                onOk={closeModal}
-                onCancel={closeModal}
             >
-                <p>Você ganhou um jogo grátis!</p>
+                <p>Ganhou um jogo grátis!</p>
             </Modal>
         </div>
     );
