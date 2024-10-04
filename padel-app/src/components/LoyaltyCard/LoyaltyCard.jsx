@@ -39,7 +39,7 @@ const handleRefresh = () => {
             </Button>
             <Modal
                 title="Parabéns!"
-                visible={modalVisible}
+                visible={data?.freeGame}
                 onOk={closeModal}
                 onCancel={closeModal}
             >
