@@ -52,10 +52,9 @@ const Navbar = () => {
                     <Link to="footer" smooth={true} duration={500}>Contactos</Link>
                 </div>
                 <div className={styles.social}>
-                    <a href="https://www.instagram.com" target="_blank"
+                    <a href="https://www.instagram.com/astrapadel_clube/?fbclid=IwZXh0bgNhZW0CMTEAAR0-xy5aomADuMqJuUuq31fTC60jrXUv_WthxBnZt8P6fhZX2dnh6NGNN2Q_aem_5rYO25y8fPP18XE6fEJ3pQ" target="_blank"
                        rel="noopener noreferrer"><InstagramOutlined/></a>
-                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><YoutubeOutlined/></a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FacebookOutlined/></a>
+                    <a href="https://www.facebook.com/people/Astra-Padel/61562037321528/" target="_blank" rel="noopener noreferrer"><FacebookOutlined/></a>
                 </div>
                 <div className={styles.mobile}>
                     <Button type="black" style={{color: "black", borderColor: "black"}} icon={<MenuOutlined/>} onClick={showDrawer}/>
