@@ -6,10 +6,11 @@ import { ReloadOutlined } from '@ant-design/icons';
 
 // eslint-disable-next-line react/prop-types
 const LoyaltyCard = ({ voucher }) => {
-    const [gamesPlayed, setGamesPlayed] = useState(0);
+    const {data} = useClient(voucher);
+
+    const [gamesPlayed, setGamesPlayed] = useState(data?.games);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const {data} = useClient(voucher);
 
 const handleRefresh = () => {
     location.reload();
