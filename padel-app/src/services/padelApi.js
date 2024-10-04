@@ -20,7 +20,7 @@ export const getClientByVoucher = async (params) => {
 };
 
 export const createClient = async (data) => {
-    const res = await padelApiClient.post('/clients', data);
+    const res = await padelApiClient.post('/public', data);
 
     return res.data;
 };
