@@ -41,7 +41,7 @@ const VoucherReader = () => {
                 });
                 await readVoucherMutate.mutateAsync({ voucherToken: obj.voucher });
                 console.log('readVoucherMutate: ', readVoucherMutate.message, readVoucherMutate)
-                setMessage({type: 'success', message: `Voucher validado!`});
+                setMessage({type: 'success', message: readVoucherMutate?.data ? readVoucherMutate.data : `Voucher validado!`});
             } else {
                 setMessage({type: 'error', message: 'Código inválido!'});
             }
