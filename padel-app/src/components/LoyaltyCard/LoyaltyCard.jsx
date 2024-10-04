@@ -7,6 +7,7 @@ import { ReloadOutlined } from '@ant-design/icons';
 // eslint-disable-next-line react/prop-types
 const LoyaltyCard = ({ voucher }) => {
     const {data} = useClient(voucher);
+    console.log('test data: ', data)
 
     const [gamesPlayed, setGamesPlayed] = useState(data?.games);
     const [modalVisible, setModalVisible] = useState(false);
