@@ -8,9 +8,6 @@ import { ReloadOutlined } from '@ant-design/icons';
 const LoyaltyCard = ({ voucher }) => {
     const {data, isLoading} = useClient(voucher);
 
-    if (isLoading) {
-        return <Spin />;
-    }
     console.log('test data: ', data)
 
     const [modalVisible, setModalVisible] = useState(data?.freeGame);
@@ -24,6 +21,9 @@ const handleRefresh = () => {
         setModalVisible(false);
     };
 
+    if (isLoading) {
+        return <Spin />;
+    }
     return (
         <div className={styles.cardContainer}>
             <div className={styles.circlesContainer}>
