@@ -66,6 +66,14 @@ const ClientsPage = () => {
                 firstGame ? <CheckCircleOutlined style={{ color: 'green' }} /> :
                     <CloseCircleOutlined style={{ color: 'red' }} />
             ),
+        },{
+            title: 'Jogo grátis?',
+            dataIndex: 'freeGame',
+            key: 'freeGame',
+            render: freeGame => (
+                freeGame ? <CheckCircleOutlined style={{ color: 'green' }} /> :
+                    <CloseCircleOutlined style={{ color: 'red' }} />
+            ),
         },
         {
             title: 'Voucher',
