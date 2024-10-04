@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Modal, Spin } from 'antd';
 import styles from './LoyaltyCard.module.scss';
 import useClient from "../../services/useClient.js";
@@ -8,8 +8,11 @@ import { ReloadOutlined } from '@ant-design/icons';
 const LoyaltyCard = ({ voucher }) => {
     const {data, isLoading} = useClient(voucher);
 
-    const [modalVisible, setModalVisible] = useState(data?.freeGame);
+    const [modalVisible, setModalVisible] = useState(false);
 
+    useEffect(() => {
+        setModalVisible(data?.freeGame)
+    }, [data?.freeGame]);
 
 const handleRefresh = () => {
     location.reload();
@@ -37,7 +40,9 @@ const handleRefresh = () => {
             </Button>
             <Modal
                 title="Parabéns!"
-                visible={data?.freeGame}
+                visible={modalVisible}
+                onOk={closeModal}
+                onCancel={closeModal}
             >
                 <p>Ganhou um jogo grátis!</p>
             </Modal>
