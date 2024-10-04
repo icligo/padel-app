@@ -39,11 +39,13 @@ const VoucherReader = () => {
                     let item = part.split('=');
                     obj[item[0]] = item[1];
                 });
-                await readVoucherMutate.mutateAsync({ voucherToken: obj.voucher });
-                console.log('readVoucherMutate: ', readVoucherMutate.message, readVoucherMutate)
-                setMessage({type: 'success', message: readVoucherMutate?.data ? readVoucherMutate.data : `Voucher validado!`});
+
+                const response = await readVoucherMutate.mutateAsync({ voucherToken: obj.voucher });
+
+                // Usar o resultado diretamente da resposta da mutação
+                setMessage({ type: 'success', message: response ? response : 'Voucher validado!' });
             } else {
-                setMessage({type: 'error', message: 'Código inválido!'});
+                setMessage({ type: 'error', message: 'Código inválido!' });
             }
         } catch (e) {
             setMessage({type: 'error', message: e.response?.data || e.message});
